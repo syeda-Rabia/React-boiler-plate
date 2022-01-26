@@ -1,20 +1,21 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import React from "react";
+import { Redirect } from "react-router-dom";
+// import { useSelector } from "react-redux";
 
 export function PrivateRoute({ Component, role, props }) {
   // const userDetail = useSelector((state) => state.Auth);
   const userDetail = {};
 
   if (userDetail.token) {
-    if (userDetail.user.roleId === null || role.indexOf(userDetail.user.roleId) > -1) {
-      return <Component {...props} />
+    if (
+      userDetail.user.roleId === null ||
+      role.indexOf(userDetail.user.roleId) > -1
+    ) {
+      return <Component {...props} />;
     } else {
-      return <Redirect to='/dashboard' />
+      return <Redirect to="/dashboard" />;
     }
   } else {
-    return <Redirect to='/' />
+    return <Redirect to="/" />;
   }
-
 }
-
