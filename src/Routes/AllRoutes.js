@@ -5,18 +5,16 @@ const delayTime = 2000;
 
 const routes = [
   {
-    path: "/dashboard",
+    path: "/",
     component: lazy(() =>
-      fakeDelay(delayTime)(import("../AdminPages/DashBoard/index"))
+      fakeDelay(delayTime)(import("../Pages/AdminPages/DashBoard"))
     ),
     exact: true,
     role: [1, 3, 4, 5],
   },
   {
-    path: "/",
-    component: lazy(() =>
-      fakeDelay(delayTime)(import("../AdminPages/Auth/Login"))
-    ),
+    path: "/login",
+    component: lazy(() => fakeDelay(delayTime)(import("../Pages/Auth/Login"))),
     ispublic: true,
     exact: true,
   },

@@ -4,17 +4,18 @@ import { Redirect } from "react-router-dom";
 
 export function PrivateRoute({ Component, role, props }) {
   // const userDetail = useSelector((state) => state.Auth);
-  const userDetail = {};
+  const userDetail = { token: "shdbuysbd" };
 
   if (userDetail.token) {
-    if (
-      userDetail.user.roleId === null ||
-      role.indexOf(userDetail.user.roleId) > -1
-    ) {
-      return <Component {...props} />;
-    } else {
-      return <Redirect to="/dashboard" />;
-    }
+    return <Component {...props} />;
+    // if (
+    //   userDetail.user.roleId === null ||
+    //   role.indexOf(userDetail.user.roleId) > -1
+    // ) {
+    //   return <Component {...props} />;
+    // } else {
+    //   return <Redirect to="/dashboard" />;
+    // }
   } else {
     return <Redirect to="/" />;
   }

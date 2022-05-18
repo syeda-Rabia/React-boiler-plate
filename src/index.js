@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
-import App from "./App";
-// import reportWebVitals from "./reportWebVitals";
-
 import { ConnectedRouter } from "connected-react-router";
-
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/lib/integration/react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import App from "./App";
+import "./Assets/Scss/globalStyleSheet.scss";
+// import "react-pro-sidebar/dist/css/styles.css";
+// import reportWebVitals from "./reportWebVitals";
 // import Notification from './helpers/Notifications';
 
 import { store, persistor, history } from "./Store";

@@ -46,7 +46,7 @@ function* forgotPasswordRequest({ payload }) {
     let data = {
       email: payload.email,
     };
-    const response = yield axios.post("auth/admin/forgot-password", data);
+    yield axios.post("auth/admin/forgot-password", data);
   } catch (error) {
     yield sagaErrorHandler(error.response);
   }
@@ -59,7 +59,7 @@ function* resetPasswordRequest({ payload }) {
       passwordResetToken: payload.passwordResetToken,
       password: payload.password,
     };
-    const response = yield axios.post("auth/admin/reset-password", data);
+    yield axios.post("auth/admin/reset-password", data);
   } catch (error) {
     yield sagaErrorHandler(error.response);
   }
