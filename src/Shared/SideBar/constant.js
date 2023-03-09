@@ -19,19 +19,8 @@ export const CLIENT_SIDEBAR = [
   {
     img: <img style={{ width: "35px" }} alt={""} src={Images.DASHBOARD_IMAGE} />,
     label: "Posts",
-    action: "/adminposts",
+    action: "/posts",
     PostModal: false,
   },
-  {
-    img: <img style={{ width: "35px" }} alt={""} src={Images.DASHBOARD_IMAGE} />,
-    label: "Donations",
-    action: "/admindonations",
-    PostModal: false,
-  },
-  {
-    img: <img style={{ width: "35px" }} alt={""} src={Images.DASHBOARD_IMAGE} />,
-    label: "Tags",
-    action: "/tags",
-    PostModal: false,
-  },
+  
 ];

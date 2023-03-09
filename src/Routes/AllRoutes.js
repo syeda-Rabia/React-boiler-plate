@@ -5,16 +5,32 @@ const delayTime = 2000;
 
 const routes = [
   {
-    path: "/",
+    path: "/dashboard",
     component: lazy(() =>
-      fakeDelay(delayTime)(import("../Pages/AdminPages/DashBoard"))
+     import("../Pages/AdminPages/DashBoard")
     ),
     exact: true,
     role: [1, 3, 4, 5],
   },
   {
-    path: "/login",
-    component: lazy(() => fakeDelay(delayTime)(import("../Pages/Auth/Login"))),
+    path: "/users",
+    component: lazy(() =>
+     import("../Pages/AdminPages/Users")
+    ),
+    exact: true,
+    role: [1, 3, 4, 5],
+  },
+  {
+    path: "/posts",
+    component: lazy(() =>
+      import("../Pages/AdminPages/Posts")
+    ),
+    exact: true,
+    role: [1, 3, 4, 5],
+  },
+  {
+    path: "/",
+    component: lazy(() => import("../Pages/Auth/Login")),
     ispublic: true,
     exact: true,
   },

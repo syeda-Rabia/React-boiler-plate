@@ -1,19 +1,19 @@
-import React from "react";
-// import { Link } from "react-router-dom";
-// import { Form, FormikProvider } from "formik";
-import { loginUser } from "../../../Store/Auth/actions";
-import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Col, Container, Row } from "reactstrap";
 import * as Yup from "yup";
-import Button from "../../../Shared/Button/Button";
-import Card from "../../../Shared/Card/Card";
-import Text from "../../../Shared/Text/Text";
-import Heading from "../../../Shared/Heading/Heading";
-import InputField from "../../../Shared/InputField";
-import SelectField from "../../../Shared/SelectField/SelectField";
+
+import { loginUser } from "../../../Store/Auth/actions";
+import LoginForm from "./LoginForm";
+import styles from "./style.module.scss";
 
 export default function Login(props) {
   const dispatch = useDispatch();
+
+  const tenantId = useSelector((state) => state.Auth.tenantId);
+ 
+  
   const loginUserSchema = Yup.object().shape({
     email: Yup.string()
       .email("Please enter valid email address")
@@ -28,7 +28,7 @@ export default function Login(props) {
     enableReinitialize: true,
     validationSchema: loginUserSchema,
     onSubmit: async (values) => {
-      await dispatch(
+      dispatch(
         loginUser({
           email: "ajmal@mail.com",
           password: "1234",
@@ -38,23 +38,16 @@ export default function Login(props) {
       );
     },
   });
+
   return (
-    <div className="socialAppLogin">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-6">
-            <Card className="">
-              <Button size={"sm"} variant="outline">
-                helo
-              </Button>
-              <Text mediumLight>hey my name is jimmy</Text>
-              <Heading subHeadingSize>Create Admin</Heading>
-              <InputField placeholder="Enter first name" />
-              <SelectField />
-            </Card>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container fluid>
+      <Row style={{ minHeight: "100vh" }}>
+       
+        <Col xl="5" className={styles.authRightSide}>
+          <LoginForm formik={formik} />
+        </Col>
+      </Row>
+     
+    </Container>
   );
 }

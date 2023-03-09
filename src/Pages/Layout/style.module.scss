@@ -2,14 +2,27 @@
 
 .contentPage {
   padding-left: 250px;
-  padding-top: 1px;
+  padding-top: 9vh;
   height: 100vh;
-  background: $black;
+  background: rgb(243, 242, 242);
   .content {
-    padding-top: 60px;
-    height: 97vh;
-    margin: 10px;
-    border-radius: 16px;
-    background-image: url("../../Assets/Images/backgroundImg.svg");
+    padding: 25px;
+    padding-top: 35px;
+  
+    height: 91vh;
+    margin: 0px;
+    // border-radius: 16px 16px 0 0;
+    overflow: auto;
+    background: var(--content-bg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contentPage {
+    padding-left: 0px;
+    padding-top: 58px;
+    height: 100vh;
+    background: var(--white);
   }
 }

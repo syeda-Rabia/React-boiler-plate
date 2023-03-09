@@ -4,12 +4,12 @@
   font-size: $font-36;
   line-height: 42px;
   font-weight: $font-weight-600;
-  color: $white;
+  color: $black;
 }
 .pageHeading {
   font-size: $font-22;
   font-weight: $font-weight-600;
-  color: $white;
+  color: $black;
   line-height: 28px;
   span {
     border-bottom: $bold-border;
@@ -18,7 +18,7 @@
 }
 .subHeadingSize {
   font-size: $font-18;
-  color: $white;
+  color: $black;
   text-transform: $text-uppercase;
   span {
     border-bottom: $bold-border;

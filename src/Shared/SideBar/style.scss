@@ -26,19 +26,38 @@
     min-width: 80px !important;
   }
   .pro-sidebar-layout {
-    background: $black;
+    background: $white;
   }
   .pro-inner-item {
     padding: 8px 34px 8px 28px !important;
-    background: $black;
+    background: $white;
     .pro-icon {
-      background: $black;
+      background: $white;
       img {
         width: 20px !important;
       }
+    
     }
     .pro-item-content {
       margin-left: 4px;
     }
+    .pro-icon-wrapper {
+      background: var(--white) !important;
+    }
+   
+  }
+  
+}
+.selected-option{
+  // svg {
+  //   path {
+  //     fill: var(--primary) !important;
+  //     fill-opacity: initial;
+  //   }
+  // }
+
+  p {
+    color: $primary;
+    font-weight: $font-weight-600;
   }
 }

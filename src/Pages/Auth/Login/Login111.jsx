@@ -1,16 +1,16 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 // import { Form, FormikProvider } from "formik";
-import { loginUser } from "../../Store/Auth/actions";
+import { loginUser } from "../../../Store/Auth/actions";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Button from "../../Shared/Button/Button";
-import Card from "../../Shared/Card/Card";
-import Text from "../../Shared/Text/Text";
-import Heading from "../../Shared/Heading/Heading";
-import InputField from "../../Shared/InputField";
-import SelectField from "../../Shared/SelectField/SelectField";
+import Button from "../../../Shared/Button/Button";
+import Card from "../../../Shared/Card/Card";
+import Text from "../../../Shared/Text/Text";
+import Heading from "../../../Shared/Heading/Heading";
+import InputField from "../../../Shared/InputField";
+import SelectField from "../../../Shared/SelectField/SelectField";
 
 export default function Login(props) {
   const dispatch = useDispatch();
@@ -39,11 +39,11 @@ export default function Login(props) {
     },
   });
   return (
-    <div className="socialAppLogin">
+    <div className="AppLogin">
       <div className="container-fluid">
-        <div className="row">
+        <div className="row  justify-content-center align-item">
           <div className="col-md-6">
-            <Card className="">
+            <Card className="shadow">
               <Button size={"sm"} variant="outline">
                 helo
               </Button>

@@ -3,7 +3,7 @@ import Card from '../../../Shared/Card/Card';
 function Home(){
     return (
         <Card>
-            <h2>Home Page</h2>
+            <h2>Users Page</h2>
         </Card>
     );
 };
